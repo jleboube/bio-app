@@ -1,0 +1,5 @@
+# For basic functionality
+sqlite3==2.6.0  # Already included in Python stdlib, but explicit version helps in some cases
+
+# Add any additional dependencies if needed
+# (Your current code doesn't require external packages beyond standard library)

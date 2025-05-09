@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  conference-app:
+    build: .
+    volumes:
+      - ./app:/app
+      - conference-data:/data
+    environment:
+      - DISPLAY=\${DISPLAY}
+      - XAUTHORITY=~/.Xauthority
+    network_mode: host
+    tty: true
+
+volumes:
+  conference-data:

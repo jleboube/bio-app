@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  conference-app:
+    build: .
+    volumes:
+      - conference-data:/data
+    environment:
+      - DISPLAY=\${DISPLAY}
+      - QT_X11_NO_MITSHM=1
+    devices:
+      - /dev/snd:/dev/snd  # For audio if needed
+      - /dev/dri:/dev/dri  # For GPU acceleration
+    security_opt:
+      - seccomp:unconfined
+    networks:
+      - conference-net
+
+volumes:
+  conference-data:
+
+networks:
+  conference-net:
+    driver: bridge
