@@ -1,5 +1,5 @@
 version: '3.8'
-
+# run this command in terminal before running docker 'xhost +local:docker'
 services:
   conference-app:
     build: .
