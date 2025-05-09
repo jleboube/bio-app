@@ -8,10 +8,10 @@ services:
     environment:
       - DISPLAY=\${DISPLAY}
       - QT_X11_NO_MITSHM=1
-    devices:
-      - /dev/snd:/dev/snd  # For audio if needed
+    #devices:
+      #- /dev/snd:/dev/snd  # For audio if needed
       - /dev/dri:/dev/dri  # For GPU acceleration
-    security_opt:
+    #security_opt:
       - seccomp:unconfined
     networks:
       - conference-net
